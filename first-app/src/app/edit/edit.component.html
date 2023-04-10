@@ -1,0 +1,36 @@
+<form class="container-sm" (ngSubmit)="onSubmit()">
+  <div class="mb-3 row">
+    <label for="name" class="col-sm-2 col-form-label">姓名</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name" [(ngModel)]="teacher.name" id="name">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">用户名</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="username" [(ngModel)]="teacher.username" id="username">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="email" [(ngModel)]="teacher.email" id="email">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label class="col-sm-2 col-form-label">性别</label>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline">
+        <input type="radio" name="sex" [value]="true" [(ngModel)]="teacher.sex">男
+        <input type="radio" name="sex" [value]="false" [(ngModel)]="teacher.sex">女
+      </div>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10 offset-2">
+      <button class="btn btn-primary">保存</button>
+    </div>
+  </div>
+</form>
+
+

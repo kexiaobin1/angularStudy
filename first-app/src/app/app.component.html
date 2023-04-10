@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-12 text-right">
+    <a class="btn btn-primary mr-2" routerLink="add"><i class="fas fa-plus"></i>新增</a>
+  </div>
+</div>
+
+<table class="table table-striped mt-2">
+  <thead>
+    <tr class="table-primary">
+      <th>序号</th>
+      <th>姓名</th>
+      <th>用户名</th>
+      <th>邮箱</th>
+      <th>性别</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ teacher.name }}</td>
+      <td>{{ teacher.username }}</td>
+      <td>{{ teacher.email }}</td>
+      <td *ngIf="teacher.sex; else femaleBlock">男</td>
+      <td>
+        <a class="btn btn-outline-primary btn-sm" [routerLink]="'edit/' + teacher.id">
+          <i class="fas fa-pen"></i>编辑
+        </a>
+        <span class="btn btn-sm btn-outline-danger" (click)="onDelete(teacher.id)">
+          <i class="far fa-trash-alt"></i>删除
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #femaleBlock>
+  <td>女</td>
+</ng-template>
